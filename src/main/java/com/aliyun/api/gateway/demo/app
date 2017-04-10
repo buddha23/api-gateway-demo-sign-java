@@ -1,0 +1,25 @@
+<jsp:include page="../header.jsp">
+    <jsp:param name="title" value="工友导入"/>
+</jsp:include>
+<div data-menu="user.user-staff">
+<div class="main-header">
+    <h1>批量导入工友</h1>
+</div>
+<div class="main-content">
+	
+	<form action="${ctx}/staff/staff_import" class="page-form margintop15" enctype="multipart/form-data" method="post">
+		<input name="file" type="file">
+		<input type="submit" value="导入">
+	</form>
+	<input type="button" onclick="getExcelTemplate()" value="导出">
+	<input type="button" onclick="getTest()" value="测试">
+</div>
+</div>
+<script>
+	function getExcelTemplate(){
+		window.location="${ctx}/staff/export";
+	}function getTest(){
+		window.location="${ctx}/staff/scanToAddStaff";
+	}
+</script>
+<jsp:include page="../footer.jsp"/>
